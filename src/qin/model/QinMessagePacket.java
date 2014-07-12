@@ -12,6 +12,8 @@ public class QinMessagePacket implements Serializable {
 	
 	//private RegisterContainer registerContainer = null;
 	private LoginContainer loginContainer = null;
+	private MessageContainer msgContainer = null;
+	private MessageListContainer msgListContainer = null;
 	//private LogoutContainer logoutSeqment = null;
 	
 	//private FindUserContainer findUserContainer = null;
@@ -68,6 +70,21 @@ public class QinMessagePacket implements Serializable {
 		loginContainer = _loginContainer;
 	}
 	
+	public MessageContainer getMessageContainer(){
+		return msgContainer;
+	}
+	
+	public void setMessageContainer(MessageContainer msgc){
+		msgContainer = msgc;
+	}
+	
+	public MessageListContainer getMessageListContainer(){
+		return msgListContainer;
+	}
+	
+	public void setMessageListContainer(MessageListContainer msgListc){
+		msgListContainer = msgListc;
+	}
 	
 	/***
 	 * 与 注销 有关的set、get函数

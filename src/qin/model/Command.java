@@ -106,13 +106,13 @@ public class Command {
 	 * 与聊天有关的信令
 	 */
     // 客户端(发送方) --> 服务端	发送私聊信息
-    public final static String SENDPRIVATECHAT = "sendPrivateChat";
+    public final static String SENDPRIVATEMSG = "sendPrivateMsg";
     // 服务端 --> 客户端(接收方)	接收私聊信息
-    public final static String RECEIVEPRIVATECHAT = "receivePrivateChat";
+    public final static String RECEIVEPRIVATEMSG = "receivePrivateMsg";
     // 客户端(发送方) --> 服务端	发送群聊信息
-    public final static String SENDGROUPCHAT = "sendGroupChat";
+    public final static String SENDGROUPMSG = "sendGroupMsg";
     // 服务端 --> 客户端(接收方) 	接群私聊信息
-    public final static String RECEIVEGROUPCHAT = "receiveGroupChat";
+    public final static String RECEIVEGROUPMSG = "receiveGroupMsg";
     
     
 	/***
