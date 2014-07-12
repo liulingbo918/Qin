@@ -3,7 +3,7 @@ package qin.server;
 import java.io.IOException;
 import java.net.ServerSocket;
 
-public class Server extends Thread {
+public class Server {
 	/*
 	 * 启用线程方法实现多个用户连接socket服务器端.
 	 */
