@@ -19,12 +19,15 @@ public class QinHandler {
 			String loginRes = lc.doLogin();
 			QinMessagePacket qinResponse = new QinMessagePacket(loginRes);
 			String lastOnline = lc.getLastOnline();
+			//System.out.println(loginRes);
 			if (Command.LOGINSUCCESS.equals(loginRes) && lc.updateState()){
 				//获取离线消息
 				MessageController mc = new MessageController();
 				qinResponse.setMessageListContainer(new MessageListContainer(mc.getOffLineMsg(lastOnline)));
-				
 				//获取好友列表
+				FriendController fc = new FriendController();
+				int uid = qmp.getLoginContainer().getLoginUserID();
+				qinResponse.setOnlineinfoContainerList(fc.getAllFriend(uid));
 				
 				//获取加友加群消息
 			}

@@ -1,6 +1,7 @@
 package qin.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import qin.model.msgContainer.*;
 
@@ -14,6 +15,9 @@ public class QinMessagePacket implements Serializable {
 	private LoginContainer loginContainer = null;
 	private MessageContainer msgContainer = null;
 	private MessageListContainer msgListContainer = null;
+	
+	private OnlineInfoContainer onlineinfoContainer = null;
+	private ArrayList<OnlineInfoContainer> onlineinfoContainerList = null;
 	//private LogoutContainer logoutSeqment = null;
 	
 	//private FindUserContainer findUserContainer = null;
@@ -84,6 +88,22 @@ public class QinMessagePacket implements Serializable {
 	
 	public void setMessageListContainer(MessageListContainer msgListc){
 		msgListContainer = msgListc;
+	}
+	
+	public OnlineInfoContainer getOnlineInfoContainer(){
+		return onlineinfoContainer;
+	}
+	
+	public void setOnlineInfoContainer(OnlineInfoContainer online){
+		onlineinfoContainer = online;
+	}
+	
+	public ArrayList<OnlineInfoContainer> getOnlineinfoContainerList(){
+		return onlineinfoContainerList;
+	}
+	
+	public void setOnlineinfoContainerList(ArrayList<OnlineInfoContainer> list){
+		onlineinfoContainerList = list;
 	}
 	
 	/***
