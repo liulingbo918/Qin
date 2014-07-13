@@ -10,22 +10,24 @@ public class LoginContainer implements Serializable{
 	private User user;
 
 	/***
-	 * ¿Í»§¶Ë --> ·þÎñ¶Ë
-	 * ÐèÒªÌá½» ÕËºÅ ºÍ ÃÜÂë
+	 * ï¿½Í»ï¿½ï¿½ï¿½ --> ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ï¿½ï¿½Òªï¿½á½» ï¿½Ëºï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	 * QinMessagePacket.command = LOGIN
 	 * @param id
 	 * @param passeord
 	 */
-	public LoginContainer(int id, String password) {
+	public LoginContainer(int id, String password, String IP, int listenPort) {
 		user = new User();
 		
 		user.setUid(id);
 		user.setPassword(password);
+		user.setIPAddr(IP);
+		user.setPort(listenPort);
 	}
 	
 	/***
-	 * ·þÎñ¶Ë --> ¿Í»§¶Ë
-	 * ·þÎñ¶ËÔÚÑéÖ¤ÕËºÅ¡¢ÃÜÂëÕýÈ·ºó£¬·µ»ØµÇÂ¼ÓÃ»§µÄÏêÏ¸ÏûÏ¢
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ --> ï¿½Í»ï¿½ï¿½ï¿½
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ËºÅ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ó£¬·ï¿½ï¿½Øµï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢
 	 * QinMessagePacket.command = LOGINSUCCESS
 	 * @param _user
 	 */
@@ -34,7 +36,7 @@ public class LoginContainer implements Serializable{
 	}
 		
 	/***
-	 * ·þÎñ¶Ë --> ¿Í»§¶Ë(µÇÂ¼ÓÃ»§µÄÔÚÏßºÃÓÑ)
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ --> ï¿½Í»ï¿½ï¿½ï¿½(ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßºï¿½ï¿½ï¿½)
 	 * QinMessagePacket.command = FRIENDLOGIN
 	 * @param id
 	 */
@@ -44,8 +46,8 @@ public class LoginContainer implements Serializable{
 	}
 	
 	/***
-	 * £¨1£©·þÎñ¶Ë£º»ñÈ¡µÇÂ¼ÓÃ»§µÄÕËºÅID
-	 * £¨2£©¿Í»§¶Ë(µÇÂ¼ÓÃ»§µÄÔÚÏßºÃÓÑ) : »ñÈ¡µÇÂ¼ºÃÓÑµÄÕËºÅID
+	 * ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½È¡ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ëºï¿½ID
+	 * ï¿½ï¿½2ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½(ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßºï¿½ï¿½ï¿½) : ï¿½ï¿½È¡ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ñµï¿½ï¿½Ëºï¿½ID
 	 * @return
 	 */
 	public int getLoginUserID() {
@@ -54,7 +56,7 @@ public class LoginContainer implements Serializable{
 	
 	
 	/***
-	 * ·þÎñ¶Ë »ñÈ¡µÇÂ¼ÓÃ»§µÄÃÜÂëpassword 
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¡ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½password 
 	 * @param 
 	 */
 	public String getLoginUserPassword() {
@@ -63,7 +65,7 @@ public class LoginContainer implements Serializable{
 	
 	
 	/***
-	 * ¿Í»§¶Ë »ñÈ¡ÆäÓÃ»§ÏûÏ¢
+	 * ï¿½Í»ï¿½ï¿½ï¿½ ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢
 	 * @return
 	 */
 	public User getUser() {

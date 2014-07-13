@@ -28,7 +28,7 @@ public class DBOperator {
 			pst = (PreparedStatement) getDBconnection().prepareStatement(sql);
 			rs = pst.executeQuery(sql);
 		} catch (SQLException e) {
-			
+			System.out.println(e.getMessage());
 		}
 		return rs;
 	}

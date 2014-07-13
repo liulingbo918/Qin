@@ -12,10 +12,12 @@ public class QinHandler {
 	}
 	
 	public QinMessagePacket getResponse(){
-		System.out.println("getResponse");
 		if (Command.LOGIN.equals(qmp.getCommand())){
 			//验证用户
 			UserController lc = new UserController(qmp.getLoginContainer().getUser());
+			
+			System.out.println(qmp.getLoginContainer().getUser().getNickName());
+			
 			String loginRes = lc.doLogin();
 			QinMessagePacket qinResponse = new QinMessagePacket(loginRes);
 			String lastOnline = lc.getLastOnline();
@@ -33,7 +35,7 @@ public class QinHandler {
 			}
 			else{
 				qinResponse.setCommand(Command.LOGINFAIL);
-				qinResponse.setResponseMsg(lc.getErrMsg());
+				qinResponse.setResponseMsg(lc.getResponseMsg());
 			}
 			return qinResponse;
 		}
@@ -49,6 +51,14 @@ public class QinHandler {
 				qinResponse.setResponseMsg("系统繁忙，请稍后重试");
 			}
 			return qinResponse;
+		}
+		else if (Command.LOGOUT.equals(qmp.getCommand())){
+			System.out.println(qmp.getCommand());
+			
+			UserController uc = new UserController(qmp.getLogoutContainer().getUid(), 
+					qmp.getLogoutContainer().getPassword());
+			uc.logout();
+			return new QinMessagePacket(Command.LOGOUT);
 		}
 		else{
 			System.out.println("else");

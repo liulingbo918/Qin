@@ -14,8 +14,15 @@ public class UserController {
 	private User user = null;
 	private DBOperator dbop = null;
 	private String lastOnline = null;
-	private String ErrMsg = null;
+	private String responseMsg = null;
 
+	public UserController(int uid, String pw){
+		user = new User();
+		user.setUid(uid);
+		user.setPassword(pw);
+		dbop = new DBOperator();
+	}
+	
 	public UserController(User u){
 		this.user = u;
 		dbop = new DBOperator();
@@ -34,22 +41,25 @@ public class UserController {
 				lastOnline = rs.getString("lastOnline");
 			}
 			else{
-				ErrMsg = "用户不存在";
+				responseMsg = "用户不存在";
 				return Command.LOGINFAIL;
 			}
 		} catch (SQLException e) {
 			
 		}
+		
+		System.out.println("receive: pw  "+pw);
+		
 		if (pw.equals(user.getPassword())){
 			if (online.equals("0"))
 				return Command.LOGINSUCCESS;
 			else{
-				ErrMsg = "不允许重复登录";
+				responseMsg = "不允许重复登录";
 				return Command.LOGINFAIL;
 			}
 		}
 		else{
-			ErrMsg = "密码错误";
+			responseMsg = "密码错误";
 			return Command.LOGINFAIL;
 		}
 	}
@@ -58,8 +68,8 @@ public class UserController {
 		return lastOnline;
 	}
 	
-	public String getErrMsg(){
-		return ErrMsg;
+	public String getResponseMsg(){
+		return responseMsg;
 	}
 	
 	public boolean updateState(){
@@ -94,6 +104,31 @@ public class UserController {
 		}
 		else {
 			return false;
+		}
+	}
+	
+	public void logout(){
+		Date d = new Date();
+		DateFormat df = DateFormat.getDateTimeInstance();
+		String datetime = df.format(d);
+		
+		String sql = "SELECT password FROM user WHERE uid = " + user.getUid();
+		ResultSet rs = null;
+		String pw = "";
+		
+		try {
+			rs = dbop.query(sql);
+			if (rs.next()){
+				pw = rs.getString("password");
+			}
+			
+			if (pw.equals(user.getPassword())){
+				String sql2 = "UPDATE user SET IPAddr = null, port = null, isOnline = '0', "
+						+ "lastOnline = \'" + datetime + "\' WHERE uid = " + user.getUid();
+				dbop.update(sql2);
+			}
+		} catch (SQLException e) {
+			
 		}
 	}
 }

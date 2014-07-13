@@ -14,6 +14,7 @@ public class QinMessagePacket implements Serializable {
 	private String responseMsg = null;
 	private RegisterContainer registerContainer = null;
 	private LoginContainer loginContainer = null;
+	private LogoutContainer logoutContainer = null;
 	private MessageContainer msgContainer = null;
 	private MessageListContainer msgListContainer = null;
 	
@@ -81,6 +82,14 @@ public class QinMessagePacket implements Serializable {
 	}
 	public void setLoginContainer(LoginContainer _loginContainer) {
 		loginContainer = _loginContainer;
+	}
+	
+	public LogoutContainer getLogoutContainer(){
+		return logoutContainer;
+	}
+	
+	public void setLogoutContainer(LogoutContainer logout){
+		logoutContainer = logout;
 	}
 	
 	public MessageContainer getMessageContainer(){
