@@ -42,6 +42,9 @@ public class Address implements Serializable {
 		city = _city;
 	}
 
+	public String toString(){
+		return province+city;
+	}
 	
 	public static String[] getProvinces() {
 		

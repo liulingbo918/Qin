@@ -88,6 +88,7 @@ public class UserController {
 	}
 	
 	public boolean register(){
+		//System.out.println("start register");
 		Date d = new Date();
 		DateFormat df = DateFormat.getDateTimeInstance();
 		String datetime = df.format(d);
@@ -95,11 +96,28 @@ public class UserController {
 		String sql = "INSERT INTO user(nickName, password, age, email, gender, address, IPAddr, port, isOnline, lastOnline)"
 				+ "VALUES(\'" + user.getNickName() + "\', \'" + user.getPassword()
 				+ "\', " + user.getAge() + ", \'" + user.getEmail()
-				+ "\', \'" + user.getGender() + "\', \'" + user.getAddress()
+				+ "\', \'" + user.getGender() + "\', \'" + user.getAddress().toString()
 				+ "\', \'" + user.getIPAddr() + "\', " + user.getPort()
 				+ ", \'0\', \'" + datetime  + "\')";
-		System.out.println(sql);
+		
 		if (dbop.insert(sql)){
+			
+			String sql2 = "SELECT uid FROM user WHERE nickName = \'" + user.getNickName() + "\'AND "
+					+ "password = \'" + user.getPassword() + "\'AND age = \'" + user.getAge() + "\'AND "
+					+ "email = \'" + user.getEmail() + "\'AND gender = \'" + user.getGender() + "\'AND "
+					+ "address = \'" + user.getAddress().toString() + "\'";
+			
+			ResultSet rs = null;
+			int uid = 0;
+			try {
+				rs = dbop.query(sql2);
+				if (rs.next()){
+					uid = rs.getInt("uid");
+					responseMsg = Integer.toString(uid);
+				}
+			} catch (SQLException e) {
+				
+			}
 			return true;
 		}
 		else {

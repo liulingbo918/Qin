@@ -3,126 +3,126 @@ package qin.model;
 public class Command {
 
 	/***
-	 * Óë×¢²áÓĞ¹ØµÄĞÅÁî
+	 * ä¸æ³¨å†Œæœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	ÓÃ»§×¢²áĞÅÁî
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	ç”¨æˆ·æ³¨å†Œä¿¡ä»¤
     public final static String REGISTER = "register";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	ÓÃ»§×¢²á³É¹¦ĞÅÁî
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	ç”¨æˆ·æ³¨å†ŒæˆåŠŸä¿¡ä»¤
     public final static String REGISTERSUCCESS = "registerSuccess";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	ÓÃ»§×¢²áÊ§°ÜĞÅÁî
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	ç”¨æˆ·æ³¨å†Œå¤±è´¥ä¿¡ä»¤
     public final static String REGISTERFAIL = "registerFail";
     
     
 	/***
-	 * ÓëµÇÂ¼ÓĞ¹ØµÄĞÅÁî
+	 * ä¸ç™»å½•æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	ÓÃ»§µÇÂ¼ĞÅÁî
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	ç”¨æˆ·ç™»å½•ä¿¡ä»¤
     public final static String LOGIN = "login";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	ÓÃ»§µÇÂ¼³É¹¦ĞÅÁî
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	ç”¨æˆ·ç™»å½•æˆåŠŸä¿¡ä»¤
     public final static String LOGINSUCCESS = "loginSuccess";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	ÓÃ»§µÇÂ¼Ê§°ÜĞÅÁî
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	ç”¨æˆ·ç™»å½•å¤±è´¥ä¿¡ä»¤
     public final static String LOGINFAIL = "loginFail";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	ºÃÓÑµÇÂ¼ĞÅÁî(ÓÃÓÚÍ¨ÖªÆäºÃÓÑ£¬Ê¹µÃºÃÓÑ°ÑËûµÄÍ¼Ïñ±äÁÁ)
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	å¥½å‹ç™»å½•ä¿¡ä»¤(ç”¨äºé€šçŸ¥å…¶å¥½å‹ï¼Œä½¿å¾—å¥½å‹æŠŠä»–çš„å›¾åƒå˜äº®)
     public final static String FRIENDLOGIN = "friendLogin";
     
   
 	/***
-	 * Óë×¢ÏúÓĞ¹ØµÄĞÅÁî
+	 * ä¸æ³¨é”€æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	ÓÃ»§×¢ÏúĞÅÁî
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	ç”¨æˆ·æ³¨é”€ä¿¡ä»¤
     public final static String LOGOUT = "logout";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	ÓÃ»§×¢ÏúĞÅÁî(ÓÃÓÚÍ¨ÖªÆäºÃÓÑ£¬Ê¹µÃºÃÓÑ°ÑËûµÄÍ¼Ïñ±ä°µ)
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	ç”¨æˆ·æ³¨é”€ä¿¡ä»¤(ç”¨äºé€šçŸ¥å…¶å¥½å‹ï¼Œä½¿å¾—å¥½å‹æŠŠä»–çš„å›¾åƒå˜æš—)
     public final static String FRIENDLOGOUT = "friendLogout";
     
     
     
 	/***
-	 * Óë²éÑ¯ÓÃ»§ÓĞ¹ØµÄĞÅÁî
+	 * ä¸æŸ¥è¯¢ç”¨æˆ·æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	²éÕÒÓÃ»§ĞÅÁî
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	æŸ¥æ‰¾ç”¨æˆ·ä¿¡ä»¤
     public final static String FINDUSER = "findUser";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	»ñµÃ²éÑ¯ÓÃ»§ĞÅÏ¢ĞÅÁî
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	è·å¾—æŸ¥è¯¢ç”¨æˆ·ä¿¡æ¯ä¿¡ä»¤
     public final static String GAINUSERINFO = "gainUserInfo";
     
     
 	/***
-	 * ÓëÌí¼ÓºÃÓÑÓĞ¹ØµÄĞÅÁî
+	 * ä¸æ·»åŠ å¥½å‹æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	Ìí¼ÓºÃÓÑ
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	æ·»åŠ å¥½å‹
     public final static String ADDFRIEND = "addFriend";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(ÇëÇó·½)	µÈ´ı±»ÇëÇó·½´¦ÀíÌí¼ÓÇëÇó
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(è¯·æ±‚æ–¹)	ç­‰å¾…è¢«è¯·æ±‚æ–¹å¤„ç†æ·»åŠ è¯·æ±‚
     public final static String WAITFORUSERRESPOND = "waitForUserRespond";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(ÇëÇó·½)	»ñµÃ±»ÇëÇó·½´¦Àí½á¹û
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(è¯·æ±‚æ–¹)	è·å¾—è¢«è¯·æ±‚æ–¹å¤„ç†ç»“æœ
     public final static String GAINMAKEFRIENDRESPOND = "gainMakeFriendRespond";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(±»ÇëÇó·½)	ÊÕµ½Ìí¼ÓºÃÓÑÇëÇó
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(è¢«è¯·æ±‚æ–¹)	æ”¶åˆ°æ·»åŠ å¥½å‹è¯·æ±‚
     public final static String RECEIVEMAKEFRIENDAPPLICATION = "receiveMakeFriendApplication";
-    // ·şÎñ¶Ë(±»ÇëÇó·½) --> ·şÎñ¶Ë	´¦ÀíÌí¼ÓºÃÓÑÇëÇó
+    // æœåŠ¡ç«¯(è¢«è¯·æ±‚æ–¹) --> æœåŠ¡ç«¯	å¤„ç†æ·»åŠ å¥½å‹è¯·æ±‚
     public final static String RESPONDMAKEFRIENDAPPLICATION = "respondMakeFriendApplication";
  
     
 	/***
-	 * Óë´´½¨ÈºÓĞ¹ØµÄĞÅÁî
+	 * ä¸åˆ›å»ºç¾¤æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	·¢ËÍ´´½¨ÈºÇëÇó
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	å‘é€åˆ›å»ºç¾¤è¯·æ±‚
     public final static String CREATEGROUP = "createGroup";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	³É¹¦´´½¨Èº
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	æˆåŠŸåˆ›å»ºç¾¤
     public final static String CREATEGROUPSUCCESS = "createGroupSuccess";
     
     
 	/***
-	 * Óë²éÕÒÈºÓĞ¹ØµÄĞÅÁî
+	 * ä¸æŸ¥æ‰¾ç¾¤æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	²éÕÒÈº
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	æŸ¥æ‰¾ç¾¤
     public final static String FINDGROUP = "findGroup";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	»ñµÃÈºÏ¢
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	è·å¾—ç¾¤æ¯
     public final static String GAINGROUPINFO = "gainGroupInfo";
     
     
 	/***
-	 * Óë¼ÓÈëÈºÓĞ¹ØµÄĞÅÁî
+	 * ä¸åŠ å…¥ç¾¤æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	ÉêÇë¼ÓÈëÈº
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	ç”³è¯·åŠ å…¥ç¾¤
     public final static String JOININGROUP = "joinInGroup";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(ÇëÇó·½)	µÈ´ıÈº(Ö÷)´¦ÀíÌí¼ÓÇëÇó
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(è¯·æ±‚æ–¹)	ç­‰å¾…ç¾¤(ä¸»)å¤„ç†æ·»åŠ è¯·æ±‚
     public final static String WAITFORGROUPRESPOND = "waitForGroupRespond";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(ÇëÇó·½)	»ñµÃÈº(Ö÷)´¦Àí½á¹û
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(è¯·æ±‚æ–¹)	è·å¾—ç¾¤(ä¸»)å¤„ç†ç»“æœ
     public final static String GAINGROUPRESPOND = "gainGroupRespond";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(ÈºÖ÷)	ÊÕµ½¼ÓÈëÈºÇëÇó
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(ç¾¤ä¸»)	æ”¶åˆ°åŠ å…¥ç¾¤è¯·æ±‚
     public final static String RECEIVEJIONINGROUPAPPLICATION = "receiveJoinInGroupApplication";
-    // ·şÎñ¶Ë(ÈºÖ÷) --> ·şÎñ¶Ë	´¦Àí¼ÓÈëÈºÇëÇó
+    // æœåŠ¡ç«¯(ç¾¤ä¸») --> æœåŠ¡ç«¯	å¤„ç†åŠ å…¥ç¾¤è¯·æ±‚
     public final static String RESPONDJIONINGROUPAPPLICATION = "respondJoinInGroupApplication";
     
     
     /***
-     * ÓëĞŞ¸Ä¸öÈËÏûÏ¢¡¢ÈºÏûÏ¢ÓĞ¹ØµÄĞÅÁî
+     * ä¸ä¿®æ”¹ä¸ªäººæ¶ˆæ¯ã€ç¾¤æ¶ˆæ¯æœ‰å…³çš„ä¿¡ä»¤
      */
-    // ¿Í»§¶Ë --> ·şÎñ¶Ë	ĞŞ¸Ä¸öÈËÏûÏ¢
+    // å®¢æˆ·ç«¯ --> æœåŠ¡ç«¯	ä¿®æ”¹ä¸ªäººæ¶ˆæ¯
     public final static String CHANGEUSERINFO = "changeUserInfo";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë	ĞŞ¸ÄÈºÏûÏ¢
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯	ä¿®æ”¹ç¾¤æ¶ˆæ¯
     public final static String CHANGEGROUPINFO = "changeGroupInfo";
     
     
 	/***
-	 * ÓëÁÄÌìÓĞ¹ØµÄĞÅÁî
+	 * ä¸èŠå¤©æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë(·¢ËÍ·½) --> ·şÎñ¶Ë	·¢ËÍË½ÁÄĞÅÏ¢
+    // å®¢æˆ·ç«¯(å‘é€æ–¹) --> æœåŠ¡ç«¯	å‘é€ç§èŠä¿¡æ¯
     public final static String SENDPRIVATEMSG = "sendPrivateMsg";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(½ÓÊÕ·½)	½ÓÊÕË½ÁÄĞÅÏ¢
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(æ¥æ”¶æ–¹)	æ¥æ”¶ç§èŠä¿¡æ¯
     public final static String RECEIVEPRIVATEMSG = "receivePrivateMsg";
-    // ¿Í»§¶Ë(·¢ËÍ·½) --> ·şÎñ¶Ë	·¢ËÍÈºÁÄĞÅÏ¢
+    // å®¢æˆ·ç«¯(å‘é€æ–¹) --> æœåŠ¡ç«¯	å‘é€ç¾¤èŠä¿¡æ¯
     public final static String SENDGROUPMSG = "sendGroupMsg";
-    // ·şÎñ¶Ë --> ¿Í»§¶Ë(½ÓÊÕ·½) 	½ÓÈºË½ÁÄĞÅÏ¢
+    // æœåŠ¡ç«¯ --> å®¢æˆ·ç«¯(æ¥æ”¶æ–¹) 	æ¥ç¾¤ç§èŠä¿¡æ¯
     public final static String RECEIVEGROUPMSG = "receiveGroupMsg";
     
     
 	/***
-	 * Óë·¢ËÍÓĞ¹ØµÄĞÅÁî
+	 * ä¸å‘é€æœ‰å…³çš„ä¿¡ä»¤
 	 */
-    // ¿Í»§¶Ë(·¢ËÍ·½) --> ¿Í»§¶Ë(½ÓÊÕ·½)	·¢ËÍÎÄ¼şÇëÇó
+    // å®¢æˆ·ç«¯(å‘é€æ–¹) --> å®¢æˆ·ç«¯(æ¥æ”¶æ–¹)	å‘é€æ–‡ä»¶è¯·æ±‚
     public final static String SENDFILE = "sendFile";
-    // ¿Í»§¶Ë(½ÓÊÕ·½) --> ¿Í»§¶Ë(½ÓÊÕ·½)	Í¬Òâ½ÓÊÕÎÄ¼ş
+    // å®¢æˆ·ç«¯(æ¥æ”¶æ–¹) --> å®¢æˆ·ç«¯(æ¥æ”¶æ–¹)	åŒæ„æ¥æ”¶æ–‡ä»¶
     public final static String  RECEIVEFILE = "receiveFile"; 
-    // ¿Í»§¶Ë(½ÓÊÕ·½) --> ¿Í»§¶Ë(½ÓÊÕ·½)	¾Ü¾ø½ÓÊÕÎÄ¼ş
+    // å®¢æˆ·ç«¯(æ¥æ”¶æ–¹) --> å®¢æˆ·ç«¯(æ¥æ”¶æ–¹)	æ‹’ç»æ¥æ”¶æ–‡ä»¶
     public final static String  REFUSETORECEIVEFILE = "refuseToReceiveFile";   
 }
 

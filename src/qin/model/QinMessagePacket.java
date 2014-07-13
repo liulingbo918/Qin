@@ -10,8 +10,8 @@ public class QinMessagePacket implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String command;
-	
 	private String responseMsg = null;
+	
 	private RegisterContainer registerContainer = null;
 	private LoginContainer loginContainer = null;
 	private LogoutContainer logoutContainer = null;
@@ -20,9 +20,8 @@ public class QinMessagePacket implements Serializable {
 	
 	private OnlineInfoContainer onlineinfoContainer = null;
 	private ArrayList<OnlineInfoContainer> onlineinfoContainerList = null;
-	//private LogoutContainer logoutSeqment = null;
 	
-	//private FindUserContainer findUserContainer = null;
+	private FindUserContainer findUserContainer = null;
 	//private MakeFriendContainer makeFriendContainer = null;
 	
 	//private CreateGroupContainer createGroupContainer = null;
@@ -122,6 +121,14 @@ public class QinMessagePacket implements Serializable {
 	
 	public void setOnlineinfoContainerList(ArrayList<OnlineInfoContainer> list){
 		onlineinfoContainerList = list;
+	}
+	
+	public FindUserContainer getFindUserContainer(){
+		return findUserContainer;
+	}
+	
+	public void setFindUserContainer(FindUserContainer fc){
+		findUserContainer = fc;
 	}
 	
 	/***
