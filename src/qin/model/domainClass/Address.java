@@ -7,11 +7,11 @@ public class Address implements Serializable {
 	private String province;
 	private String city;
 	
-	private static String[] allProvince = {"--", "±±¾©", "ÉÏº£", "Ìì½ò", "ÖØÇì", "ºÓ±±", "É½Î÷", "ÄÚÃÉ¹Å", 
-										"ºÚÁú½­", "¼ªÁÖ", "ÁÉÄş", "ÉÂÎ÷", "¸ÊËà", "Çàº£", "É½¶«", "ºÓÄÏ", 
-										"½­ËÕ", "Õã½­", "°²»Õ", "½­Î÷", "¸£½¨", "Ì¨Íå", "ºş±±", "ºşÄÏ", 
-										"¹ã¶«", "¹ãÎ÷", "º£ÄÏ", "ËÄ´¨", "ÔÆÄÏ", "¹óÖİ","Î÷²Ø", "ĞÂ½®", "ÄşÏÄ", 
-										"Ïã¸Û", "°ÄÃÅ"
+	private static String[] allProvince = {"--", "åŒ—äº¬", "ä¸Šæµ·", "å¤©æ´¥", "é‡åº†", "æ²³åŒ—", "å±±è¥¿", "å†…è’™å¤", 
+										"é»‘é¾™æ±Ÿ", "å‰æ—", "è¾½å®", "é™•è¥¿", "ç”˜è‚ƒ", "é’æµ·", "å±±ä¸œ", "æ²³å—", 
+										"æ±Ÿè‹", "æµ™æ±Ÿ", "å®‰å¾½", "æ±Ÿè¥¿", "ç¦å»º", "å°æ¹¾", "æ¹–åŒ—", "æ¹–å—", 
+										"å¹¿ä¸œ", "å¹¿è¥¿", "æµ·å—", "å››å·", "äº‘å—", "è´µå·","è¥¿è—", "æ–°ç–†", "å®å¤", 
+										"é¦™æ¸¯", "æ¾³é—¨"
 										};
 	
 	public Address() {
@@ -51,22 +51,22 @@ public class Address implements Serializable {
 	public static String[] getCitiesByProvinceName(String provinceName) {
 		switch(provinceName) {
 	
-		case "±±¾©" : 
-			return new String[] {"±±¾©"};			
-		case "ÉÏº£" : 
-			return new String[] {"ÉÏº£"};
-		case "Ìì½ò" : 
-			return new String[] {"Ìì½ò"};
-		case "ÖØÇì" : 
-			return new String[] {"ÖØÇì"};
-		case "Ïã¸Û" : 
-			return new String[] {"Ïã¸Û"};
-		case "°ÄÃÅ" : 
-			return new String[] {"°ÄÃÅ"};
+		case "åŒ—äº¬" : 
+			return new String[] {"åŒ—äº¬"};			
+		case "ä¸Šæµ·" : 
+			return new String[] {"ä¸Šæµ·"};
+		case "å¤©æ´¥" : 
+			return new String[] {"å¤©æ´¥"};
+		case "é‡åº†" : 
+			return new String[] {"é‡åº†"};
+		case "é¦™æ¸¯" : 
+			return new String[] {"é¦™æ¸¯"};
+		case "æ¾³é—¨" : 
+			return new String[] {"æ¾³é—¨"};
 			
-		case "¹ã¶«" : 
-			return new String[] {"--","¹ãÖİ","ÉîÛÚ", "Öéº£", "ÉÇÍ·", "ÉØ¹Ø", "·ğÉ½", "½­ÃÅ", "Õ¿½­", "Ã¯Ãû","ÕØÇì",
-					 			 "»İÖİ","Ã·Öİ","ÉÇÎ²","ºÓÔ´","Ñô½­","ÇåÔ¶","¶«İ¸","ÖĞÉ½","³±Öİ","½ÒÑô","ÔÆ¸¡" };
+		case "å¹¿ä¸œ" : 
+			return new String[] {"--","å¹¿å·","æ·±åœ³", "ç æµ·", "æ±•å¤´", "éŸ¶å…³", "ä½›å±±", "æ±Ÿé—¨", "æ¹›æ±Ÿ", "èŒ‚å","è‚‡åº†",
+					 			 "æƒ å·","æ¢…å·","æ±•å°¾","æ²³æº","é˜³æ±Ÿ","æ¸…è¿œ","ä¸œè","ä¸­å±±","æ½®å·","æ­é˜³","äº‘æµ®" };
 			
 		//**********************
 		// other provinces

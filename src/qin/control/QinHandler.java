@@ -12,28 +12,42 @@ public class QinHandler {
 	}
 	
 	public QinMessagePacket getResponse(){
-		
+		System.out.println("getResponse");
 		if (Command.LOGIN.equals(qmp.getCommand())){
-			//验证登录
-			UserController lc = new UserController(qmp.getLoginContainer());
+			//楠岃瘉鐢ㄦ埛
+			UserController lc = new UserController(qmp.getLoginContainer().getUser());
 			String loginRes = lc.doLogin();
 			QinMessagePacket qinResponse = new QinMessagePacket(loginRes);
 			String lastOnline = lc.getLastOnline();
 			//System.out.println(loginRes);
 			if (Command.LOGINSUCCESS.equals(loginRes) && lc.updateState()){
-				//获取离线消息
+				//鑾峰彇绂荤嚎娑堟伅
 				MessageController mc = new MessageController();
 				qinResponse.setMessageListContainer(new MessageListContainer(mc.getOffLineMsg(lastOnline)));
-				//获取好友列表
+				//鑾峰彇濂藉弸鍒楄〃
 				FriendController fc = new FriendController();
 				int uid = qmp.getLoginContainer().getLoginUserID();
 				qinResponse.setOnlineinfoContainerList(fc.getAllFriend(uid));
 				
-				//获取加友加群消息
+				//鑾峰彇鍔犲弸鍔犵兢娑堟伅
 			}
-			else
+			else{
 				qinResponse.setCommand(Command.LOGINFAIL);
-			
+				qinResponse.setResponseMsg(lc.getErrMsg());
+			}
+			return qinResponse;
+		}
+		else if (Command.REGISTER.equals(qmp.getCommand())){
+			System.out.println(qmp.getCommand());
+			UserController uc = new UserController(qmp.getRegisterContainer().getUser());
+			QinMessagePacket qinResponse = null;
+			if (uc.register()){
+				qinResponse = new QinMessagePacket(Command.REGISTERSUCCESS);
+			}
+			else{
+				qinResponse = new QinMessagePacket(Command.REGISTERFAIL);
+				qinResponse.setResponseMsg("绯荤粺绻佸繖锛岃绋嶅悗閲嶈瘯");
+			}
 			return qinResponse;
 		}
 		else{

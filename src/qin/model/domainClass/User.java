@@ -61,7 +61,7 @@ public class User implements Serializable {
 		gender = _gender;
 	}
 
-	public void  getAddress(Address _address) {
+	public void  setAddress(Address _address) {
 		address = _address;
 	}
 	

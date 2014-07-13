@@ -7,7 +7,6 @@ import java.util.Date;
 
 import qin.model.Command;
 import qin.model.domainClass.User;
-import qin.model.msgContainer.LoginContainer;
 import qin.control.DBOperator;
 
 public class UserController {
@@ -15,34 +14,52 @@ public class UserController {
 	private User user = null;
 	private DBOperator dbop = null;
 	private String lastOnline = null;
+	private String ErrMsg = null;
 
-	public UserController(LoginContainer lc){
-		this.user = lc.getUser();
+	public UserController(User u){
+		this.user = u;
 		dbop = new DBOperator();
 	}
 	
 	public String doLogin(){
-		String sql = "SELECT password, lastOnline FROM user WHERE uid = " + user.getUid();
+		String sql = "SELECT password, isOnline, lastOnline FROM user WHERE uid = " + user.getUid();
 		ResultSet rs = null;
 		String pw = "";
+		String online = "";
 		try {
 			rs = dbop.query(sql);
 			if (rs.next()){
 				pw = rs.getString("password");
+				online = rs.getString("isOnline");
 				lastOnline = rs.getString("lastOnline");
+			}
+			else{
+				ErrMsg = "用户不存在";
+				return Command.LOGINFAIL;
 			}
 		} catch (SQLException e) {
 			
 		}
 		if (pw.equals(user.getPassword())){
-			return Command.LOGINSUCCESS;
+			if (online.equals("0"))
+				return Command.LOGINSUCCESS;
+			else{
+				ErrMsg = "不允许重复登录";
+				return Command.LOGINFAIL;
+			}
 		}
-		else
+		else{
+			ErrMsg = "密码错误";
 			return Command.LOGINFAIL;
+		}
 	}
 	
 	public String getLastOnline(){
 		return lastOnline;
+	}
+	
+	public String getErrMsg(){
+		return ErrMsg;
 	}
 	
 	public boolean updateState(){
@@ -58,5 +75,25 @@ public class UserController {
 		}
 		else
 			return false;
+	}
+	
+	public boolean register(){
+		Date d = new Date();
+		DateFormat df = DateFormat.getDateTimeInstance();
+		String datetime = df.format(d);
+		
+		String sql = "INSERT INTO user(nickName, password, age, email, gender, address, IPAddr, port, isOnline, lastOnline)"
+				+ "VALUES(\'" + user.getNickName() + "\', \'" + user.getPassword()
+				+ "\', " + user.getAge() + ", \'" + user.getEmail()
+				+ "\', \'" + user.getGender() + "\', \'" + user.getAddress()
+				+ "\', \'" + user.getIPAddr() + "\', " + user.getPort()
+				+ ", \'0\', \'" + datetime  + "\')";
+		System.out.println(sql);
+		if (dbop.insert(sql)){
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }

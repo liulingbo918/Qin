@@ -69,6 +69,5 @@ public class LoginContainer implements Serializable{
 	public User getUser() {
 		return user;
 	}
-	
 }
 

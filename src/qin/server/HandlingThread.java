@@ -11,21 +11,21 @@ import qin.model.QinMessagePacket;
 public class HandlingThread extends Thread {
 	private Socket client;
 	/*
-	 * ¹¹Ôìº¯Êı£¬½ÓÊÕÃ¿Ò»¸ösocketÊµÀı
+	 * ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½socketÊµï¿½ï¿½
 	 */
 	public HandlingThread(Socket socket) {
 		this.client = socket;
 	}
 
 	/*
-	 * Ïß³ÌÖ´ĞĞ·½·¨
+	 * ï¿½ß³ï¿½Ö´ï¿½Ğ·ï¿½ï¿½ï¿½
 	 */
 	public void run() {
 		ObjectInputStream is = null;
 		ObjectOutputStream out = null;
 		try {
-			System.out.println("Ïß³Ì¿ªÆô");
-			//¶ÔÏóÊı¾İÁ÷µÄ»ñÈ¡Óë·µ»Ø
+			System.out.println("çº¿ç¨‹å¼€å¯");
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½È¡ï¿½ë·µï¿½ï¿½
 			is = new ObjectInputStream(new BufferedInputStream(client.getInputStream()));
 			Object obj = is.readObject();
 			QinMessagePacket qmp = (QinMessagePacket) obj;

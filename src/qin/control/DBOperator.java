@@ -43,4 +43,15 @@ public class DBOperator {
 	        return false;
 		}
 	}
+	
+	public boolean insert(String sql){
+		Statement stmt = null;
+		try{
+			stmt = getDBconnection().createStatement();
+			stmt.executeUpdate(sql);
+			return true;
+		} catch(SQLException e){
+			return false;
+		}
+	}
 }

@@ -11,7 +11,8 @@ public class QinMessagePacket implements Serializable {
 
 	private String command;
 	
-	//private RegisterContainer registerContainer = null;
+	private String responseMsg = null;
+	private RegisterContainer registerContainer = null;
 	private LoginContainer loginContainer = null;
 	private MessageContainer msgContainer = null;
 	private MessageListContainer msgListContainer = null;
@@ -40,7 +41,7 @@ public class QinMessagePacket implements Serializable {
 	
 	
 	/***
-	 * Óë ²Ù×÷ÀàÐÍ command ÓÐ¹ØµÄ set¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ command ï¿½Ð¹Øµï¿½ setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	public String getCommand() {
@@ -50,21 +51,29 @@ public class QinMessagePacket implements Serializable {
 		command = _command;
 	}
 	
+	public String getResponseMsg(){
+		return responseMsg;
+	}
+	
+	public void setResponseMsg(String msg){
+		responseMsg = msg;
+	}
 
 	/***
-	 * Óë ×¢²á ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ×¢ï¿½ï¿½ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
-	 *//*
+	 */
 	public RegisterContainer getRegisterContainer() {
 		return registerContainer;
 	}
+	
 	public void setRegisterContainer(RegisterContainer _registerContainer) {
 		registerContainer = _registerContainer;
 	}
-	*/
+	
 	
 	/***
-	 * Óë µÇÂ¼ ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½Â¼ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	public LoginContainer getLoginContainer() {
@@ -107,7 +116,7 @@ public class QinMessagePacket implements Serializable {
 	}
 	
 	/***
-	 * Óë ×¢Ïú ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ×¢ï¿½ï¿½ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public LogoutContainer getLogoutContainer() {
@@ -119,7 +128,7 @@ public class QinMessagePacket implements Serializable {
 */
 	
 	/***
-	 * Óë ²éÑ¯ÓÃ»§ÐÅÏ¢ ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½Ñ¯ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public FindUserContainer getFindUserContainer() {
@@ -131,7 +140,7 @@ public class QinMessagePacket implements Serializable {
 	*/
 	
 	/***
-	 * Óë Ìí¼ÓºÃÓÑ ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½Óºï¿½ï¿½ï¿½ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public MakeFriendContainer getMakeFriendContainer() {
@@ -143,7 +152,7 @@ public class QinMessagePacket implements Serializable {
 	*/
 	
 	/***
-	 * Óë ´´½¨Èº ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Èº ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public CreateGroupContainer getCreateGroupContainer() {
@@ -155,7 +164,7 @@ public class QinMessagePacket implements Serializable {
 	*/
 	
 	/***
-	 * Óë ²éÑ¯Èº ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½Ñ¯Èº ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public FindGroupContainer getFindGroupContainer() {
@@ -167,7 +176,7 @@ public class QinMessagePacket implements Serializable {
 	*/
 	
 	/***
-	 * Óë ¼ÓÈëÈº ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Èº ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public JoinInGroupContainer  getJoinInGroupContainer() {
@@ -179,7 +188,7 @@ public class QinMessagePacket implements Serializable {
 	*/
 	
 	/***
-	 * Óë ¸ü¸ÄÈºÉèÖÃ ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½ï¿½Èºï¿½ï¿½ï¿½ï¿½ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public ChangeGroupInfoContainer getChangeGroupInfoContainer() {
@@ -191,7 +200,7 @@ public class QinMessagePacket implements Serializable {
 	*/
 	
 	/***
-	 * Óë ¸ü¸ÄÓÃ»§ÐÅÏ¢ ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public ChangeUserInfoContainer getChangeUserInfoContainer() {
@@ -202,7 +211,7 @@ public class QinMessagePacket implements Serializable {
 	}
 	*/
 	/***
-	 * Óë ÁÄÌì ÓÐ¹ØµÄset¡¢getº¯Êý
+	 * ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¹Øµï¿½setï¿½ï¿½getï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 *//*
 	public ChatContainer getChatContainer() {

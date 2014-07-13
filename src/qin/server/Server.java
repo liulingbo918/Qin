@@ -5,17 +5,17 @@ import java.net.ServerSocket;
 
 public class Server {
 	/*
-	 * ÆôÓÃÏß³Ì·½·¨ÊµÏÖ¶à¸öÓÃ»§Á¬½Ósocket·şÎñÆ÷¶Ë.
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì·ï¿½ï¿½ï¿½Êµï¿½Ö¶ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½socketï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 	 */
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
-		// ´´½¨·şÎñ¶Ë£¬¼àÌı¶Ë¿Ú6688
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½6688
 		ServerSocket ss = new ServerSocket(6687);
-		System.out.println("·şÎñÆ÷ÒÑ¾­¿ªÆô£¬µÈ´ıÁ¬½Ó¡£");
-		// Ê¹ÓÃ·şÎñÆ÷¶Ë±£³ÖÓÀ¾Ã¼àÌı×´Ì¬
+		System.out.println("æœåŠ¡å™¨å·²ç»å¼€å¯ï¼Œç­‰å¾…è¿æ¥ã€‚");
+		// Ê¹ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½×´Ì¬
 		while (true) {
-			// ½ÓÊÕÃ¿Ò»¸ö¿Í»§¶ËµÄÁ¬½Ó£¬²¢·µ»ØsocketÊµÀı
+			// ï¿½ï¿½ï¿½ï¿½Ã¿Ò»ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½socketÊµï¿½ï¿½
 			//Server osa = new Server(server.accept());
-			// ÎªÃ¿Ò»¸ö¿Í»§¶ËÆôÒ»¸öÏß³Ì£¬È¥Ö´ĞĞ²Ù×÷
+			// ÎªÃ¿Ò»ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ß³Ì£ï¿½È¥Ö´ï¿½Ğ²ï¿½ï¿½ï¿½
 			//osa.start();
 			HandlingThread ht = new HandlingThread(ss.accept());
 			ht.start();
